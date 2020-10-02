@@ -1,4 +1,4 @@
-module.exports = async (lenght) => {
+module.exports = async (length) => {
     return new Promise ((resolve, reject) => {
         var result           = '';
         var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-+*#()1234567890';
