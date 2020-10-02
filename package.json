@@ -1,0 +1,25 @@
+{
+  "name": "jicord",
+  "version": "1.0.0",
+  "description": "Jicord is a simple api, that enables you to push your jira notifications to your discord server. ",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KonstntinM/Jicord.git"
+  },
+  "keywords": [
+    "discory",
+    "jira",
+    "atlassian",
+    "api"
+  ],
+  "author": "KonstntinM",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/KonstntinM/Jicord/issues"
+  },
+  "homepage": "https://github.com/KonstntinM/Jicord#readme"
+}
