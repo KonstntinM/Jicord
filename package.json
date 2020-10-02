@@ -4,7 +4,8 @@
   "description": "Jicord is a simple api, that enables you to push your jira notifications to your discord server. ",
   "main": "src/index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "nodemon src/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,7 @@
   "dependencies": {
     "axios": "^0.20.0",
     "discord-webhook-node": "^1.1.8",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
   }
 }
