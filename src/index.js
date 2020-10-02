@@ -4,6 +4,10 @@ var app = express()
 app.get("/", function(req, res) {
     res.json("Hello World from Express!");
 });
+
+app.post("/webhook/:code", athenticate, function (req, res) {
+    
+})
   
 const port = process.env.PORT || 80
 app.listen(port, () => {
