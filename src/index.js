@@ -8,9 +8,9 @@ const authenticate = require("./services/authentication-service")
 const generateKey = require("./services/key-service")
 
 if (!process.env.KEY) {
-    generateKey(15)
+    generateKey(150)
         .then((key) => {
-            process.env.KEY = key
+            process.env['KEY'] = key
         })
 }
 
