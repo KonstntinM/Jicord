@@ -1,8 +1,10 @@
-const key = process.env.key
+module.exports = function (req, res, next) {
 
-module.exports = async (req, res, next) => {
-    if (!req.params.key == key) {
-        return res.status(404)
+    const key = process.env.key
+
+    if (!(req.params.key == key)) {
+        res.status(404).send()
+    } else {
+        next()
     }
-    next()
 }

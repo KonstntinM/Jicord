@@ -2,15 +2,23 @@ const express = require("express")
 var app = express()
 
 const authenticate = require("./services/authentication-service")
+const jiraService = require("./services/jira-service")
+
+// app configuration
+
+app.use(express.json())
 
 // authentication
 
 const generateKey = require("./services/key-service")
 
+process.env.key = "1"
+
 if (!process.env.KEY) {
     generateKey(150)
         .then((key) => {
             process.env['KEY'] = key
+            console.log("http://localhost:80/webhook/" + key);
         })
 }
 
@@ -21,8 +29,15 @@ app.get("/", function(req, res) {
     res.json("Hello World from Express!");
 });
 
-app.post("/webhook/:code", authenticate, function (req, res) {
-
+app.post("/webhook/:key/:id", authenticate, function (req, res) {
+    console.log("new Request!");
+    switch (req.params.id) {
+        case "1000":
+            jiraService.newProduction(req.body)
+            break;
+        default:
+            res.status(400).send()
+    }
 })
 
 // server
